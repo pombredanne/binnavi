@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public class DaddiTranslator implements IInstructionTranslator {
     final String sourceImmediateSignExtended =
         SignExtendGenerator.extend16BitTo64(offset, environment, sourceImmediate, instructions);
 
+    offset = ReilHelpers.nextReilAddress(instruction, instructions);
     instructions.add(ReilHelpers.createAdd(offset++, qw, sourceRegister, qw,
         sourceImmediateSignExtended, ow, temporaryResult));
 

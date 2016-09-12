@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -63,19 +63,14 @@ public final class IdaHelpers {
 
       // Java manages the streams internally - if they are full, the
       // process blocks, i.e. IDA hangs, so we need to consume them.
-      final BufferedReader reader =
-          new BufferedReader(new InputStreamReader(processInfo.getInputStream()));
-      String line;
-      try {
-        while ((line = reader.readLine()) != null) {
-          System.out.println(line);
-        }
+      try (BufferedReader reader =
+          new BufferedReader(new InputStreamReader(processInfo.getInputStream()))) {
+          reader.lines().forEach(System.out::println);
       } catch (final IOException exception) {
-        reader.close();
+          //Ignore
       }
-      reader.close();
-
       return processInfo;
+      
     } catch (final Exception exception) {
       try {
         // TODO: What can we do here ? Do we have a ZyLib-wide logger ?

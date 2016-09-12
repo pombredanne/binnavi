@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -87,7 +87,10 @@ public class SubTranslator implements IInstructionTranslator {
 
     // Adjust the offset of the next REIL instruction.
     offset = baseOffset + instructions.size();
-
+    
+    Helpers.writeParityFlag(environment, offset, size, subResultValue, instructions);
+    offset = baseOffset + instructions.size();
+    
     // Write the result of the value back into the target operand
     Helpers.writeBack(environment, offset, operand1, subResultValue, size,
         operand1Result.getAddress(), operand1Result.getType(), instructions);

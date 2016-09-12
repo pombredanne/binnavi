@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ public class DivTranslator implements IInstructionTranslator {
     // Write the result back and set the flags
     instructions
         .addAll(Helpers.writeDivResult(environment, offset++, divResult, modResult, size));
-
+    offset = baseOffset + instructions.size();
     // Undefine flags
     instructions.add(ReilHelpers.createUndef(offset++, OperandSize.BYTE, Helpers.AUXILIARY_FLAG));
     instructions.add(ReilHelpers.createUndef(offset++, OperandSize.BYTE, Helpers.CARRY_FLAG));

@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -29,10 +29,11 @@ public final class Constants {
   public static final String PROJECT_NAME = "BinNavi";
 
   /** Version number of the product. Used for fine-grained versioning of the database schema. */
+  // TODO(cblichmann): Rename to DATABASE_SCHEMA_VERSION.
   public static final String PROJECT_VERSION = "6.0.1";
 
   /** Version number of the product. */
-  public static final String PROJECT_SHORT_VERSION = "6.0";
+  public static final String PROJECT_SHORT_VERSION = "6.1";
 
   /** Name and version number of the project. */
   public static final String PROJECT_NAME_VERSION = PROJECT_NAME + " " + PROJECT_SHORT_VERSION;

@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -28,18 +28,22 @@ public class StringHelper {
    * @return Number of times the character appears in the string.
    */
   public static int count(final String string, final char c) {
-    int counter = 0;
-
-    for (int i = 0; i < string.length(); i++) {
-      if (string.charAt(i) == c) {
-        counter++;
-      }
-    }
-
-    return counter;
+    return (int) string.chars()
+                  .filter(character -> character == c)
+                  .count();
   }
 
   /**
+   * Deprecated. Use replaceAll() method
+   * of the java.lang.String class instead;
+   * 
+   * For example:
+   * {@code
+   * String initialString = "I teed some tews";
+   * String resultString = initialString.replaceAll("t", "n");
+   * //resultString will be: "I need some news"
+   * }
+   * 
    * Replaces all occurrences of a substring inside a string.
    *
    * @param inputLine The input string.
@@ -48,6 +52,7 @@ public class StringHelper {
    *
    * @return The input line with all occurrences of source replaced by target.
    */
+  @Deprecated
   public static String replaceAll(final String inputLine, final String source, final String target) {
     int index = inputLine.indexOf(source);
 

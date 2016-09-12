@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class ARMLdrdTranslator extends ARMBaseTranslator {
     final int registerNum = Helpers.getRegisterIndex(registerNodeValue);
 
     if (((registerNum % 2) == 0) && (registerNum != 14)) {
+      baseOffset = baseOffset + instructions.size();
       instructions.add(ReilHelpers.createLdm(baseOffset++, dw, tmpAddress, dw, registerNodeValue));
       instructions.add(ReilHelpers.createAdd(
           baseOffset++, dw, tmpAddress, bt, String.valueOf(4), dw, tmpAddress2));

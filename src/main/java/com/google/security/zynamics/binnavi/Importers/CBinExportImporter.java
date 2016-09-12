@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public final class CBinExportImporter extends CBaseExporter {
   /**
    * Path to the BinExport IDC file.
    */
-  private static final String BINEXPORT_VERSION = "zynamics_binexport_8";
+  private static final String BINEXPORT_VERSION = "zynamics_binexport_9";
   private static final String BINEXPORT_IDC_FILE_CONTENT = "#include <idc.idc>\n" + //
       "static main() {\n" + //
       "  Batch(0);\n" + //

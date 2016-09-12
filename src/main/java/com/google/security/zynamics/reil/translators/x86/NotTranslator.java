@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -61,7 +61,8 @@ public class NotTranslator implements IInstructionTranslator {
 
     // Load the operand.
     final TranslationResult result = Helpers.translateOperand(environment, offset, operand, true);
-
+    instructions.addAll(result.getInstructions());
+    
     // Adjust the offset of the next REIL instruction.
     offset = baseOffset + instructions.size();
 

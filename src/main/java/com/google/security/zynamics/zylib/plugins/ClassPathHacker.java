@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public class ClassPathHacker {
       addURL(f.toURI().toURL());
     } catch (final MalformedURLException e) {
       // Should never happen
-      assert false : "Malformed URL from toURI()";
+      throw new AssertionError("Malformed URL from toURI() method");
     }
   }
 
@@ -47,7 +47,7 @@ public class ClassPathHacker {
       method.setAccessible(true);
       method.invoke(sysloader, new Object[] {u});
 
-      // TODO: Reminder for SP (Log this without using System.out.print
+      // TODO: Reminder for SP (Log this without using
       // System.out.println("Dynamically added " + u.toString() + " to classLoader");
     } catch (final Exception e) {
       e.printStackTrace();

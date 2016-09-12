@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -80,12 +80,11 @@ public class CDefaultNodeExitAction<NodeType extends ZyGraphNode<?>, EdgeType ex
         // ESCA-JAVA0166: Catch Exception because we are calling a listener function
         try {
           listener.nodeLeft(node);
-        } catch (final Exception exception) {
+        } catch (final Exception e) {
           CUtilityFunctions.logException(e);
         }
       }
     }
-
 
     state.getGraph().updateViews();
   }

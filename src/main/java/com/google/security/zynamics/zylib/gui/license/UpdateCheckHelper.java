@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class UpdateCheckHelper {
   /**
    * Base URL prefix for the update check mechanism. Make sure it does not end with a slash.
    */
-  public static String UPDATE_CHECK_BASE_URL = "http://www.zynamics.com/updates";
+  public static String UPDATE_CHECK_BASE_URL = "https://www.zynamics.com/updates";
 
   private UpdateCheckHelper() {
     // Static methods only

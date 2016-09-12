@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class ARMLdrbtTranslator extends ARMBaseTranslator {
 
     final String tmpAddress = resultPair.first();
 
-    instructions.add(ReilHelpers.createLdm(baseOffset++, dw, tmpAddress, bt, registerNodeValue));
+    instructions.add(ReilHelpers.createLdm(baseOffset+instructions.size(), dw, tmpAddress, bt, registerNodeValue));
   }
 
   /**

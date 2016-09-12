@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -188,6 +188,10 @@ public class OperandGraph extends DirectedGraph<OperandGraphNode, OperandGraphEd
       if (!found) {
         continue;
       }
+
+      //don't link self-dependency
+      if(search.getInstruction() == instruction)
+        continue;
 
       if (ReilHelpers.writesThirdOperand(instruction.getMnemonicCode())
           && instruction.getThirdOperand().getValue().equals(value)) {

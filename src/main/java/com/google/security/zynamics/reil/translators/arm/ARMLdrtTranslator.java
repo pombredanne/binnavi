@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ public class ARMLdrtTranslator extends ARMBaseTranslator {
     final String rotResult2 = environment.getNextVariableString();
     final String tmpData1 = environment.getNextVariableString();
     final String tmpRotResult = environment.getNextVariableString();
-
+    baseOffset = baseOffset + instructions.size();
     instructions.add(ReilHelpers.createLdm(baseOffset++, dw, tmpAddress, dw, tmpData1));
 
     // get rotate * 8

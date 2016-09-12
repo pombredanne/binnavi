@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -45,11 +45,11 @@ public class NorTranslator implements IInstructionTranslator {
     final OperandSize dw = OperandSize.DWORD;
 
     final long baseOffset = ReilHelpers.toReilAddress(instruction.getAddress()).toLong();
-    final long offset = baseOffset;
+    long offset = baseOffset;
 
     final String temporaryOrResult = environment.getNextVariableString();
 
-    instructions.add(ReilHelpers.createOr(offset, dw, sourceRegister1, dw, sourceRegister2, dw,
+    instructions.add(ReilHelpers.createOr(offset++, dw, sourceRegister1, dw, sourceRegister2, dw,
         temporaryOrResult));
     instructions.add(ReilHelpers.createXor(offset, dw, temporaryOrResult, dw,
         String.valueOf(0xFFFFFFFFL), dw, targetRegister));

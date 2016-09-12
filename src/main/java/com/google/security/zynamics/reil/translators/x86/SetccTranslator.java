@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -87,7 +87,8 @@ public class SetccTranslator implements IInstructionTranslator {
     final OperandSize size = result.getSize();
     final TranslationResultType type = result.getType();
     final String address = result.getAddress();
-
+    instructions.addAll(result.getInstructions());
+    
     // Adjust the offset of the next REIL instruction.
     reilOffset = reilOffsetBase + instructions.size();
 

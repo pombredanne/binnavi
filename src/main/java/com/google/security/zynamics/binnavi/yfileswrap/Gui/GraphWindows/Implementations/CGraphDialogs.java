@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ limitations under the License.
 package com.google.security.zynamics.binnavi.yfileswrap.Gui.GraphWindows.Implementations;
 
 import com.google.security.zynamics.binnavi.CUtilityFunctions;
-import com.google.security.zynamics.binnavi.Gui.ErrorDialog.CNaviErrorDialog;
+import com.google.security.zynamics.binnavi.Gui.errordialog.NaviErrorDialog;
 import com.google.security.zynamics.binnavi.Gui.GraphSettings.CGraphSettingsDialog;
 import com.google.security.zynamics.binnavi.Gui.GraphWindows.CGraphModel;
 import com.google.security.zynamics.binnavi.Gui.GraphWindows.CViewCommentDialog;
@@ -147,7 +147,7 @@ public final class CGraphDialogs {
                 new String[] {"There was a problem with the database connection."},
                 new String[] {"The view was not updated and the new view description is lost."});
 
-        CNaviErrorDialog.show(parent, innerMessage, innerDescription, e);
+        NaviErrorDialog.show(parent, innerMessage, innerDescription, e);
       }
     }
   }

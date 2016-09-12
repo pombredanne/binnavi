@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -48,12 +48,12 @@ public final class CConnection {
   /**
    * Configuration for the database connection.
    */
-  private static CDatabaseConfiguration m_databaseConfiguration;
+  private CDatabaseConfiguration m_databaseConfiguration;
 
   /**
    * Current database connection properties.
    */
-  private static Properties m_properties;
+  private Properties m_properties;
 
   /**
    * Connection to the database.

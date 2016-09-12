@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public class SwlTranslator implements IInstructionTranslator {
 
     instructions.add(ReilHelpers.createAnd(offset++, dw, extendedValue, dw,
         String.valueOf(0xFFFFFFFCL), dw, address));
-    instructions.add(ReilHelpers.createLdm(offset, dw, address, dw, memoryContent));
+    instructions.add(ReilHelpers.createLdm(offset++, dw, address, dw, memoryContent));
 
     instructions.add(ReilHelpers.createAnd(offset++, dw, extendedValue, dw, String.valueOf(3L), dw,
         lastTwoAddressBits));

@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ public class AndTranslator implements IInstructionTranslator {
     Helpers.writeBack(environment, offset, targetOperand, andResult, size,
         targetResult.getAddress(), targetResult.getType(), instructions);
 
-    Helpers.writeParityFlag(environment, offset, size, andResult, instructions);
+    Helpers.writeParityFlag(environment, baseOffset + instructions.size(), size, andResult, instructions);
   }
 
 }

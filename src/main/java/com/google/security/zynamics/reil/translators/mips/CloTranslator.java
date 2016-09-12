@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ public class CloTranslator implements IInstructionTranslator {
     instructions.add(ReilHelpers.createOr(baseOffset++, dw, w, dw, v, dw, z));
 
     // x = z >> 1;
-    instructions.add(ReilHelpers.createBsh(baseOffset, dw, z, dw, String.valueOf(-1L), dw, x));
+    instructions.add(ReilHelpers.createBsh(baseOffset++, dw, z, dw, String.valueOf(-1L), dw, x));
 
     // b = x & 0x55555555;
     instructions.add(ReilHelpers.createAnd(baseOffset++, dw, x, dw, String.valueOf(0x55555555L),

@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -93,7 +93,7 @@ public class LoopneTranslator implements IInstructionTranslator {
         OperandSize.BYTE, zfZero, OperandSize.BYTE, condition));
 
     // Jump if ECX != 0 && ZF == 0
-    instructions.add(ReilHelpers.createJcc(baseOffset + 5, OperandSize.BYTE, condition, archSize,
+    instructions.add(ReilHelpers.createJcc(baseOffset + 6, OperandSize.BYTE, condition, archSize,
         loopTarget));
   }
 

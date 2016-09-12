@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Google Inc. All Rights Reserved.
+Copyright 2011-2016 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -221,7 +221,7 @@ public class ShldTranslator implements IInstructionTranslator {
     instructions.add(ReilHelpers.createXor(offset++, firstResult.getSize(), tempInput,
         firstResult.getSize(), shiftedIsolationResult, firstResult.getSize(), xoredMsb));
     instructions.add(ReilHelpers.createAnd(offset++, firstResult.getSize(), xoredMsb,
-        OperandSize.BYTE, String.valueOf(msbMask), OperandSize.BYTE, maskedMsb));
+        firstResult.getSize(), String.valueOf(msbMask), firstResult.getSize(), maskedMsb));
     instructions.add(ReilHelpers.createBsh(offset++, firstResult.getSize(), maskedMsb,
         OperandSize.BYTE, String.valueOf(msbShift), OperandSize.BYTE, Helpers.OVERFLOW_FLAG));
 
